@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 kick_data = pd.read_csv("Kickstarter002.csv")
 
 # Construct seaborn heatmap to get correlations between attributes
-sns.heatmap(kick_data.corr(), annot=True, cmap='cool')
+sns.heatmap(kick_data.corr(), annot=True, cmap='PRGn')
 
 # Show plot
 plt.show()
