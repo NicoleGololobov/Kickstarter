@@ -12,4 +12,4 @@ backers_count, category, country, goal, staff_pick, state, usd_pledged
 The blurb may also be interesting
 
 Heatmap1 shows correlations between all attributes. 
-Heatmap2 shows correlations between only a few chosen attributes.
+Heatmap2 shows correlations between chosen attributes.
