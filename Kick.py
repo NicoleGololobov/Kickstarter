@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 
 # Read data into pandas dataframe
 kick_data = pd.read_csv("Kickstarter002.csv")
+# Isolate relevant attributes
+kick_data = kick_data.loc[:, ['backers_count','blurb','category','country', 'goal', 'staff_pick', 'state', 'usd_pledged']]
 
 # Construct seaborn heatmap to get correlations between attributes
 sns.heatmap(kick_data.corr(), annot=True, cmap='PRGn')
