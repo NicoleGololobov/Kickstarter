@@ -1,5 +1,5 @@
 # Kickstarter
-Analyze Kickstarter data using seaborn
+Analyze Kickstarter data
 
 3786 records
 
