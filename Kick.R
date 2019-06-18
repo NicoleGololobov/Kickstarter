@@ -24,4 +24,9 @@ summary(lin_model2)
 # backers_count and staff_picktrue are significant
 # adjusted R-squared = .6393
 
+par(mfrow=c(2,2))
+plot(lin_model2)
+
+
+
 
