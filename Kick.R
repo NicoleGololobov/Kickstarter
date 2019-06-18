@@ -19,10 +19,10 @@ summary(lin_model)
 
 sum(kick_data$country == "NL") # returns 20, should not be included in model
 
-lin_model2 = lm(usd_pledged ~ backers_count + staff_pick,data = train)
+lin_model2 = lm(usd_pledged ~ backers_count,data = train)
 summary(lin_model2)
-# backers_count and staff_picktrue are significant
-# adjusted R-squared = .6393
+# backers_count and staff_picktrue are significant, but staff_picktrue much less
+# adjusted R-squared = .639
 
 par(mfrow=c(2,2))
 plot(lin_model2)
@@ -32,5 +32,11 @@ pred = predict(lin_model2, newdata = test)
 # measure root mean square error
 rmse = sqrt(sum((exp(pred) - test$usd_pledged)^2)/length(test$usd_pledged))
 print(rmse) # returns Inf
+
+# adjust rmse since value is otherwise too small
+rmse1 = sqrt(sum((pred - test$usd_pledged)/length(test$usd_pledged)))
+print(rmse1) # 33.00204
+
+
 
 
