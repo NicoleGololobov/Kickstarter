@@ -4,5 +4,6 @@ kick_data = read.csv("/Users/Nicole/Documents/Kickstarter/Kickstarter002.csv")
 # remove live entries as their final state is unknown
 kick_data = kick_data[!(kick_data$state=="live"),]
 
-
+kick_data$category<-as.factor(kick_data$category)
+kick_data$country<-as.factor(kick_data$country)
 
