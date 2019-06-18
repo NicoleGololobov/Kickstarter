@@ -1,6 +1,5 @@
 # Read data into pandas dataframe
 kick_data = read.csv("/Users/Nicole/Documents/Kickstarter/Kickstarter002.csv")
-
 # remove live entries as their final state is unknown
 kick_data = kick_data[!(kick_data$state=="live"),]
 
@@ -12,3 +11,8 @@ samp_size = floor(0.75 * nrow(kick_data))
 samp = sample(seq_len(nrow(kick_data)), size = samp_size)
 train = kick_data[samp,]
 test = kick_data[-samp, ]
+
+lin_model = lm(usd_pledged ~ backers_count + staff_pick + goal + country,data = train)
+summary(lin_model) 
+# results indicate backers_count and countryNL are significant
+# adjusted R-squared = .6512
