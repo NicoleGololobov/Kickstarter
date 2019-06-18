@@ -27,6 +27,10 @@ summary(lin_model2)
 par(mfrow=c(2,2))
 plot(lin_model2)
 
-
+# predict usd_pledged with test data
+pred = predict(lin_model2, newdata = test) 
+# measure root mean square error
+rmse = sqrt(sum((exp(pred) - test$usd_pledged)^2)/length(test$usd_pledged))
+print(rmse) # returns Inf
 
 
