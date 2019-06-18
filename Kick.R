@@ -16,3 +16,5 @@ lin_model = lm(usd_pledged ~ backers_count + staff_pick + goal + country,data = 
 summary(lin_model) 
 # results indicate backers_count and countryNL are significant
 # adjusted R-squared = .6512
+
+sum(kick_data$country == "NL") # returns 20, should not be included in model
