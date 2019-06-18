@@ -18,3 +18,10 @@ summary(lin_model)
 # adjusted R-squared = .6512
 
 sum(kick_data$country == "NL") # returns 20, should not be included in model
+
+lin_model2 = lm(usd_pledged ~ backers_count + staff_pick,data = train)
+summary(lin_model2)
+# backers_count and staff_picktrue are significant
+# adjusted R-squared = .6393
+
+
